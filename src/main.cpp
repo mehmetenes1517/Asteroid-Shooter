@@ -20,7 +20,7 @@ int main(){
     InitWindow(WIDTH,HEIGHT,"Shoot Asteroids");
     InitAudioDevice();
 
-    Music m=LoadMusicStream("./music.mp3");
+    Music m=LoadMusicStream("music.mp3");
     SetMusicVolume(m,0.5f);
     PlayMusicStream(m);
 
@@ -87,7 +87,6 @@ int main(){
         coefficient=(Point>=25.0f) ?  (Point>=50.0f ? (Point>=65.0f ? 4.0f : 2.0f) : 1.5f) :1.0; 
         if(coefficient>=1.5f) t=1.0f;
 
-        cout<<endl<<setprecision(10)<<coefficient;
         //deltaTime
         deltaTime=GetTime()-time;
         time=GetTime();
@@ -103,7 +102,6 @@ int main(){
 
             //Character Operations 
 
-            
             //Drawing Points earned
             std::string counter="Points :"+std::to_string(Point);
             DrawText(counter.c_str(),WIDTH-200,0,32,WHITE);        

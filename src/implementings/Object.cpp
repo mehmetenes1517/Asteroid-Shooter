@@ -85,14 +85,14 @@ bool Object::CheckCollision(Object& other,std::string tag){
                 {
                     .x=other.pos.GetX(),
                     .y=other.pos.GetY(),
-                    .width=other.sizex,
-                    .height=other.sizey
+                    .width=other.sizex*2,
+                    .height=other.sizey*2
                 },
                 {
                     .x=this->pos.GetX(),
                     .y=this->pos.GetY(),
-                    .width=this->sizex,
-                    .height=this->sizey
+                    .width=this->sizex*2,
+                    .height=this->sizey*2
                 }
             );
             
