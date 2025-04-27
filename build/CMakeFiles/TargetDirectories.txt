@@ -1,3 +1,0 @@
-/home/mehmetenes1517/Desktop/ShooterGame/build/CMakeFiles/GameProject.dir
-/home/mehmetenes1517/Desktop/ShooterGame/build/CMakeFiles/edit_cache.dir
-/home/mehmetenes1517/Desktop/ShooterGame/build/CMakeFiles/rebuild_cache.dir
