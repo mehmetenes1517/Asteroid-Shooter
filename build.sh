@@ -3,7 +3,7 @@
 
 cmake -S . -B build/ && cd build
 
-make . && ./GameProject
+make && ./GameProject
 
 
 
