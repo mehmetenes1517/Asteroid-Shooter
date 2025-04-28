@@ -67,34 +67,38 @@ bool Object::CheckCollision(Object& other){
     Rectangle this_rect=(Rectangle){
         .x=pos.GetX(),
         .y=pos.GetY(),
-        .width=sizex,
-        .height=sizey,
+        .width=sizex*2,
+        .height=sizey*2,
     };
     Rectangle other_rect=(Rectangle){
         .x=other.pos.GetX(),
         .y=other.pos.GetY(),
-        .width=other.sizex,
-        .height=other.sizey,
+        .width=other.sizex*2,
+        .height=other.sizey*2,
     };
     return CheckCollisionRecs(this_rect,other_rect);
 }
 bool Object::CheckCollision(Object& other,std::string tag){
     if(other.tag==tag){
         
-        return CheckCollisionRecs(
-                {
-                    .x=other.pos.GetX(),
-                    .y=other.pos.GetY(),
-                    .width=other.sizex*2,
-                    .height=other.sizey*2
-                },
-                {
-                    .x=this->pos.GetX(),
-                    .y=this->pos.GetY(),
-                    .width=this->sizex*2,
-                    .height=this->sizey*2
-                }
-            );
+        Rectangle rect1={
+            .x=other.pos.GetX()-other.sizex,
+            .y=other.pos.GetY()-other.sizey,
+            .width=other.sizex*2,
+            .height=other.sizey*2
+        };
+        Rectangle rect2={
+            .x=this->pos.GetX()-this->sizex,
+            .y=this->pos.GetY()-this->sizey/2,
+            .width=this->sizex*2,
+            .height=this->sizey
+
+        };
+        //DRAWING COLLISION BUGS
+        //DrawRectangleLines(rect1.x,rect1.y,rect1.width,rect1.height,MAGENTA);
+        //DrawRectangleLines(rect2.x,rect2.y,rect2.width,rect2.height,MAGENTA);
+
+        return CheckCollisionRecs(rect1,rect2);
             
     }
     return false;
